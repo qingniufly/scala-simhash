@@ -10,7 +10,7 @@ import scala.collection.mutable
   * Created by ligz on 2017/2/3.
   */
 
-class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: Int = 2) {
+class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: Int = 2) extends Serializable {
 
   val logger = LoggerFactory.getLogger(getClass)
 
@@ -122,7 +122,8 @@ class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: I
     getKeys(sh).filter(key => bucket.contains(key)).map(key => {
       val cans = bucket(key)
       if (cans.size > 200) {
-        logger.warn(s"发现容量超过200的桶，key=【$key】，len=【${cans.size}】")
+//        logger.warn(s"发现容量超过200的桶，key=【$key】，len=【${cans.size}】")
+        println(s"发现容量超过200的桶，key=【$key】，len=【${cans.size}】")
       }
       cans.filter {
         case (_, shI) => {

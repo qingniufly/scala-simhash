@@ -16,7 +16,8 @@ class KeyWordExtractor(idfPath: String, stopwordsPath: String) {
   val logger = LoggerFactory.getLogger(getClass)
 
   val jcseg = {
-    val config = new JcsegTaskConfig(getClass.getResourceAsStream("jcseg.properties"))
+//    val config = new JcsegTaskConfig(getClass.getResource("/jcseg.properties").getPath)
+    val config = new JcsegTaskConfig(getClass.getResourceAsStream("/jcseg.properties"))
     val dic = DictionaryFactory.createSingletonDictionary(config)
     SegmentFactory.createJcseg(JcsegTaskConfig.COMPLEX_MODE,
       List[Object](config, dic):_*)

@@ -39,9 +39,9 @@ object SimhashIndexTest extends App {
   println(s"100010110110\n与\n110001110011\n的距离是：$dis")
 
 
-  val idfPath = getClass.getResource("idf.utf8").getPath
-  val stopwordsPath = getClass.getResource("stop_words.utf8").getPath
-  val taskFile = getClass.getResource("task.txt").getPath
+  val idfPath = getClass.getResource("/idf.utf8").getPath
+  val stopwordsPath = getClass.getResource("/stop_words.utf8").getPath
+  val taskFile = getClass.getResource("/task.txt").getPath
 
   val simhash = SimHash(idfPath, stopwordsPath)
   val topN = 15

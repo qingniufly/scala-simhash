@@ -4,7 +4,9 @@ version := "1.0"
 
 organization := "com.qnfly"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.4"
+
+crossScalaVersions := Seq("2.10.5", "2.11.4")
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 

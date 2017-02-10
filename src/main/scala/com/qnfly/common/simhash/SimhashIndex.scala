@@ -10,7 +10,7 @@ import scala.collection.mutable
   * Created by ligz on 2017/2/3.
   */
 
-class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: Int = 2) extends Serializable {
+class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: Int = 4) extends Serializable {
 
   val logger = LoggerFactory.getLogger(getClass)
 
@@ -50,7 +50,7 @@ class SimhashIndex(values: Iterable[(String, BigInt)], var f: Int = 64, var k: I
     *
     * @return
     */
-  val offsets = (0 until k).map(i => f / (k + 1) * i).toList
+  val offsets = (0 until k).map(i => f / k * i).toList
 
 
   /**
